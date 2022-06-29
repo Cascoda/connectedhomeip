@@ -2833,9 +2833,8 @@ void TestReadInteraction::TestReadInvalidMessage2(nlTestSuite * apSuite, void * 
     NL_TEST_ASSERT(apSuite, ctx.GetExchangeManager().GetNumActiveExchanges() == 0);
 }
 
-// Read Client creates the subscription with server, server sends chunked reports, after the hander sends out the first chunked report,
-// handle call unknow message function and send status report, client
-// and server would be closed
+// Read Client creates the subscription with server, server sends chunked reports, after the hander sends out the first chunked
+// report, handle call unknow message function and send status report, client and server would be closed
 void TestReadInteraction::TestSubscribeInvalidMessage1(nlTestSuite * apSuite, void * apContext)
 {
     TestContext & ctx = *static_cast<TestContext *>(apContext);
