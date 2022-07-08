@@ -63,6 +63,9 @@ Input Options:
                                                             no: Do not install
                                                             build-env: install to virtual env for build matter
                                                             separate: install to another virtual env (out/python_env)
+  -o, --target_os   OS                                      Target operating system for the compiler e.g. linux
+  
+  -c, --target_cpu  CPUArchitecture                         Target CPU architecture for the compiler e.g. x64, arm64
 "
 }
 
@@ -94,6 +97,14 @@ while (($#)); do
             install_wheel=$2
             shift
             ;;
+        --target_os | -o)
+            target_os=$2
+            shift
+            ;;
+        --target_cpu | -c)
+            target_cpu=$2
+            shift
+            ;;
         -*)
             help
             echo "Unknown Option \"$1\""
@@ -113,7 +124,7 @@ source "$CHIP_ROOT/scripts/activate.sh"
 [[ -n "$chip_mdns" ]] && chip_mdns_arg="chip_mdns=\"$chip_mdns\"" || chip_mdns_arg=""
 [[ -n "$chip_case_retry_delta" ]] && chip_case_retry_arg="chip_case_retry_delta=$chip_case_retry_delta" || chip_case_retry_arg=""
 
-gn --root="$CHIP_ROOT" gen "$OUTPUT_ROOT" --args="chip_detail_logging=$chip_detail_logging enable_pylib=$enable_pybindings enable_rtti=$enable_pybindings chip_project_config_include_dirs=[\"//config/python\"] $chip_mdns_arg $chip_case_retry_arg"
+gn --root="$CHIP_ROOT" gen "$OUTPUT_ROOT" --args="chip_detail_logging=$chip_detail_logging enable_pylib=$enable_pybindings enable_rtti=$enable_pybindings target_os=\"$target_os\" target_cpu=\"$target_cpu\" chip_project_config_include_dirs=[\"//config/python\"] $chip_mdns_arg $chip_case_retry_arg"
 
 # Compiles python files
 # Check pybindings was requested
