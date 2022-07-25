@@ -666,13 +666,13 @@ def main(argv: Sequence[str]) -> None:
                         flush_print(
                             "SYSROOT_AARCH64 env variable not set. "
                             "AARCH64 toolchain needed for cross-compiling for arm64.")
-                        exit(1)
-                    shell.env["PKG_CONFIG_PATH"] = (
-                        f'{shell.env["SYSROOT_AARCH64"]}/lib/aarch64-linux-gnu/pkgconfig')
+                        # exit(1)
+                    # shell.env["PKG_CONFIG_PATH"] = (
+                    #    f'{shell.env["SYSROOT_AARCH64"]}/lib/aarch64-linux-gnu/pkgconfig')
                     linux_args.append('target_cpu="arm64"')
                     linux_args.append('is_clang=true')
                     linux_args.append('chip_crypto="mbedtls"')
-                    linux_args.append(f'sysroot="{shell.env["SYSROOT_AARCH64"]}"')
+                    # linux_args.append(f'sysroot="{shell.env["SYSROOT_AARCH64"]}"')
 
                 elif options.cpu_type == "arm":
                     if "SYSROOT_ARMHF" not in shell.env:
