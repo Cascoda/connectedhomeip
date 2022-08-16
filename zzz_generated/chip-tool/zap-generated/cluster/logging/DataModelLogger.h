@@ -20,7 +20,7 @@
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::AccessControl::Structs::AccessControlEntry::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::BridgedActions::Structs::ActionStruct::DecodableType & value);
+                           const chip::app::Clusters::Actions::Structs::ActionStruct::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::ContentLauncher::Structs::AdditionalInfo::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
@@ -55,7 +55,7 @@ static CHIP_ERROR LogValue(const char * label, size_t indent,
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::TestCluster::Structs::DoubleNestedStructList::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::BridgedActions::Structs::EndpointListStruct::DecodableType & value);
+                           const chip::app::Clusters::Actions::Structs::EndpointListStruct::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::AccessControl::Structs::ExtensionEntry::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
@@ -100,13 +100,9 @@ static CHIP_ERROR LogValue(const char * label, size_t indent,
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::MediaPlayback::Structs::PlaybackPosition::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::PowerProfile::Structs::PowerProfileRecord::DecodableType & value);
-static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::OtaSoftwareUpdateRequestor::Structs::ProviderLocation::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::ThreadNetworkDiagnostics::Structs::RouteTable::DecodableType & value);
-static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::PowerProfile::Structs::ScheduledPhase::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::ThreadNetworkDiagnostics::Structs::SecurityPolicy::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
@@ -132,8 +128,6 @@ LogValue(const char * label, size_t indent,
          const chip::app::Clusters::NetworkCommissioning::Structs::ThreadInterfaceScanResult::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::SoftwareDiagnostics::Structs::ThreadMetrics::DecodableType & value);
-static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::PowerProfile::Structs::TransferredPhase::DecodableType & value);
 static CHIP_ERROR
 LogValue(const char * label, size_t indent,
          const chip::app::Clusters::NetworkCommissioning::Structs::WiFiInterfaceScanResult::DecodableType & value);
@@ -145,9 +139,9 @@ static CHIP_ERROR LogValue(const char * label, size_t indent,
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::AccessControl::Events::AccessControlExtensionChanged::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::BridgedActions::Events::StateChanged::DecodableType & value);
+                           const chip::app::Clusters::Actions::Events::StateChanged::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
-                           const chip::app::Clusters::BridgedActions::Events::ActionFailed::DecodableType & value);
+                           const chip::app::Clusters::Actions::Events::ActionFailed::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::Basic::Events::StartUp::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
@@ -174,6 +168,8 @@ static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::SoftwareDiagnostics::Events::SoftwareFault::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::ThreadNetworkDiagnostics::Events::ConnectionStatus::DecodableType & value);
+static CHIP_ERROR LogValue(const char * label, size_t indent,
+                           const chip::app::Clusters::ThreadNetworkDiagnostics::Events::NetworkFaultChange::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
                            const chip::app::Clusters::WiFiNetworkDiagnostics::Events::Disconnection::DecodableType & value);
 static CHIP_ERROR LogValue(const char * label, size_t indent,
